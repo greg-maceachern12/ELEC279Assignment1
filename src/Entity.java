@@ -14,9 +14,10 @@ public class Entity {
 		name = nameIn;
 		born = dateIn;
 	}
+
 	public Entity(Entity entity) {
 		name = entity.getName(entity);
-		born = entity.getBorn(entity);	
+		born = entity.getBorn(entity);
 	}
 
 	// accessor for the name of the specified entity
@@ -28,28 +29,28 @@ public class Entity {
 	public void printPersonsName(Entity object) {
 		System.out.println(object.name);
 	}
-	//accessor for getting the birthdate of the specified entity
+
+	// accessor for getting the birthdate of the specified entity
 	public Date getBorn(Entity object) {
 		return object.born;
 	}
 
-	//The toString constructor
-	//Returns the name, the birthdate (month,day,year)
+	// The toString constructor
+	// Returns the name, the birthdate (month,day,year)
 	public void toString(String month, int day, int year, String namePrint, Date bornPrint) {
 		System.out.println(namePrint + ", born on " + month + " " + day + ", " + year);
 	}
 
-	//Checking if two entities are equal to one another. If they are
-	//return true
+	// Checking if two entities are equal to one another. If they are
+	// return true
 	public boolean equals(Entity entity) {
-		 return entity.born.equals(born);
+		return entity.born.equals(born);
 
-		
 	}
-	
-	//if the date is before the current date
+
+	// if the date is before the current date
 	public boolean precedes(Entity entity) {
 		return entity.born.precedes(born);
-		
+
 	}
 }

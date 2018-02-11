@@ -11,6 +11,15 @@ public class Date {
 		day = 1;
 		year = 1000;
 	}
+	
+	public Date (String str) {
+		String[] parts = str.split("/");
+		int month = Integer.parseInt(parts[0]);
+		int day = Integer.parseInt(parts[1]);
+		int year = Integer.parseInt(parts[2]);
+		setDate(month, day, year);
+		
+	}
 
 	public Date(int monthInt, int day, int year) {
 		setDate(monthInt, day, year);
@@ -148,19 +157,28 @@ public class Date {
 		while (tryAgain) {
 			System.out.println("Enter month, day, and year.");
 			System.out.println("Do not use a comma.");
-			String monthInput = keyboard.next();
-			if (monthInput.equals("quit")) {
+			String inputString = keyboard.next();
+			if (inputString.equals("quit")) {
+				System.out.println("You Quit The Game");
 				System.exit(0);
 			}
-			int dayInput = keyboard.nextInt();
-			int yearInput = keyboard.nextInt();
+			
+			
+			String[] parts = inputString.split("/");
+			int monthInput = Integer.parseInt(parts[0]);
+			int dayInput = Integer.parseInt(parts[1]);
+			int yearInput = Integer.parseInt(parts[2]);
+
+//			
+//			int dayInput = keyboard.nextInt();
+//			int yearInput = keyboard.nextInt();
 
 			if (dateOK(monthInput, dayInput, yearInput)) {
 				setDate(monthInput, dayInput, yearInput);
 				tryAgain = false;
 
 			} else
-				System.out.println("Illegal date. Reenter input.");
+				System.out.println("Illegal date. Reenter input. \n");
 		}
 	}
 
