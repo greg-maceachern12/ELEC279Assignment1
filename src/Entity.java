@@ -1,3 +1,5 @@
+//Property of Gregory MacEachern
+//20011768
 
 public class Entity {
 	private String name;
@@ -20,6 +22,13 @@ public class Entity {
 		born = entity.getBorn(entity);
 	}
 
+	// Checking if two entities are equal to one another. If they are
+	// return true
+	public boolean equals(Entity entity) {
+		return entity.born.equals(born);
+
+	}
+
 	// accessor for the name of the specified entity
 	public String getName(Entity object) {
 		return object.name;
@@ -30,22 +39,15 @@ public class Entity {
 		System.out.println(object.name);
 	}
 
-	// accessor for getting the birthdate of the specified entity
-	public Date getBorn(Entity object) {
-		return object.born;
-	}
-
 	// The toString constructor
 	// Returns the name, the birthdate (month,day,year)
 	public void toString(String month, int day, int year, String namePrint, Date bornPrint) {
 		System.out.println(namePrint + ", born on " + month + " " + day + ", " + year);
 	}
 
-	// Checking if two entities are equal to one another. If they are
-	// return true
-	public boolean equals(Entity entity) {
-		return entity.born.equals(born);
-
+	// accessor for getting the birthdate of the specified entity
+	public Date getBorn(Entity object) {
+		return object.born;
 	}
 
 	// if the date is before the current date
